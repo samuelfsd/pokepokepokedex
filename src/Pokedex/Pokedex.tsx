@@ -1,8 +1,7 @@
-import { Header } from 'components/Header';
 import { listPokemons, PokemonListInterface } from 'Pokemon/services/listPokemons';
 import React, { useEffect, useState } from 'react';
 
-import { CardPokemon, Container } from './styles';
+import { CardPokemon, Container, GridContainer } from './styles';
 
 export function Pokedex() {
   const [pokemons, setPokemons] = useState<PokemonListInterface[]>([]);
@@ -12,13 +11,14 @@ export function Pokedex() {
   }, []);
   return (
     <Container>
-      <Header />
-      {pokemons.map((pokemon) => (
-        <CardPokemon key={pokemon.name}>
-          <h3>{pokemon.name}</h3>
-          <a href={pokemon.url}>Clique aqui</a>
-        </CardPokemon>
-      ))}
+      <GridContainer>
+        {pokemons.map((pokemon) => (
+          <CardPokemon key={pokemon.name}>
+            <h3>{pokemon.name}</h3>
+            <a href={pokemon.url}>Clique aqui</a>
+          </CardPokemon>
+        ))}
+      </GridContainer>
     </Container>
   );
 }
