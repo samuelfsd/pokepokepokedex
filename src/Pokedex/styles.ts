@@ -13,10 +13,19 @@ export const GridContainer = styled.div`
 `;
 
 export const CardPokemon = styled.div`
-  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-height: 150px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 20px 30px;
 
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px -5px;
+  }
   h3 {
     margin-bottom: 30px;
   }

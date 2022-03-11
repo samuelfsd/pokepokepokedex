@@ -15,7 +15,7 @@ export function Pokedex() {
         {pokemons.map((pokemon) => (
           <CardPokemon key={pokemon.name}>
             <h3>{pokemon.name}</h3>
-            <a href={pokemon.url}>Clique aqui</a>
+            <a href={pokemon.url}>Abrir</a>
           </CardPokemon>
         ))}
       </GridContainer>
