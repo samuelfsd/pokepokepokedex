@@ -1,13 +1,15 @@
 import { Header } from 'components/Header';
-import { Pokedex } from 'Pokedex/Pokedex';
 import React from 'react';
-
+import { BrowserRouter } from 'react-router-dom';
+import { RoutesComponent } from 'routes';
 export function App() {
   return (
-    <div>
+    <>
       <Header />
-      <Pokedex />
-    </div>
+      <BrowserRouter>
+        <RoutesComponent />
+      </BrowserRouter>
+    </>
   );
 }
 
