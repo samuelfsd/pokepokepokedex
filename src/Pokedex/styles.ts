@@ -18,16 +18,15 @@ export const CardPokemon = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  min-height: 150px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  padding: 20px 30px;
+  padding: 2rem 4rem;
 
   &:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 15px -5px;
   }
   h3 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 `;
 

@@ -23,7 +23,7 @@ export function Pokedex() {
             <h3>{pokemon.name}</h3>
             <ActionButton>
               <button onClick={() => handleClick(pokemon)}>
-                <span>Abrir</span>
+                <span>Open</span>
               </button>
             </ActionButton>
           </CardPokemon>

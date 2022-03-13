@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getPokemonDetails } from './services/getPokemonDetails';
+import { Container, Content, Details, ImageContainer, Title } from './styles';
 import { PokemonDetail } from './types/PokemonDetails';
 
 export function PokemonDetails() {
@@ -17,16 +18,36 @@ export function PokemonDetails() {
   }, [name]);
 
   return (
-    <div>
-      <h1>Pokemon Selected: {name} </h1>
+    <Container>
+      <Title>
+        <h2>Pokemon Selected: {name} </h2>
+      </Title>
 
-      <main>
-        obaoba
-        <img
-          src={selectedPokemonDetails?.sprites.front_default}
-          alt={selectedPokemonDetails?.name}
-        />
-      </main>
-    </div>
+      <Content>
+        <ImageContainer>
+          <img
+            src={selectedPokemonDetails?.sprites.front_default}
+            alt={selectedPokemonDetails?.name}
+          />
+        </ImageContainer>
+
+        <div>
+          <div>
+            {selectedPokemonDetails?.types.map((type) => (
+              <p key={type.type.name}>{type.type.name}</p>
+            ))}
+          </div>
+          <Details>
+            <p>Specie: </p>
+            {selectedPokemonDetails?.height}
+            {selectedPokemonDetails?.species.name}
+            {selectedPokemonDetails?.weight}
+            {selectedPokemonDetails?.abilities.map((ability) => (
+              <p key={ability.ability.name}>{ability.ability.name}</p>
+            ))}
+          </Details>
+        </div>
+      </Content>
+    </Container>
   );
 }
