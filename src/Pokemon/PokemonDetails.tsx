@@ -31,22 +31,27 @@ export function PokemonDetails() {
           />
         </ImageContainer>
 
-        <div>
+        <Details>
           <div>
-            {selectedPokemonDetails?.types.map((type) => (
-              <p key={type.type.name}>{type.type.name}</p>
-            ))}
+            <h4>Types: </h4>
+            <div>
+              {selectedPokemonDetails?.types.map((type) => (
+                <p key={type.type.name}>{type.type.name}</p>
+              ))}
+            </div>
           </div>
-          <Details>
-            <p>Specie: </p>
-            {selectedPokemonDetails?.height}
-            {selectedPokemonDetails?.species.name}
-            {selectedPokemonDetails?.weight}
-            {selectedPokemonDetails?.abilities.map((ability) => (
-              <p key={ability.ability.name}>{ability.ability.name}</p>
-            ))}
-          </Details>
-        </div>
+          <div className="right-col">
+            <h4>Species: </h4>
+            <div>
+              <p>{selectedPokemonDetails?.height}</p>
+              <p>{selectedPokemonDetails?.species.name}</p>
+              <p>{selectedPokemonDetails?.weight}</p>
+              {selectedPokemonDetails?.abilities.map((ability) => (
+                <p key={ability.ability.name}>{ability.ability.name}</p>
+              ))}
+            </div>
+          </div>
+        </Details>
       </Content>
     </Container>
   );
